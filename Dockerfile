@@ -7,3 +7,4 @@ EXPOSE 3000
 RUN npm install
 COPY . /
 CMD ["npm", "start:prod"]
+CMD ["npm", "sequelize-cli db:seed:all"]

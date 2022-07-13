@@ -15,7 +15,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       owner: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Users'
+          },
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
