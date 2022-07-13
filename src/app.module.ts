@@ -9,7 +9,6 @@ import { CarbonCertificate } from './carbon-certificates/entities/carbon-certifi
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { AuthModule } from './auth/auth.module';
-import { SeederModule } from 'nestjs-sequelize-seeder';
 
 @Module({
   imports: [
@@ -31,9 +30,6 @@ import { SeederModule } from 'nestjs-sequelize-seeder';
         models: [User, CarbonCertificate],
       }),
     }),
-    SeederModule.forRoot({
-       runOnlyIfTableIsEmpty: false,
-   }),
     AuthModule, UsersModule, CarbonCertificatesModule],
   controllers: [AppController],
   providers: [AppService],
